@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kaushal Jangid | Research Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+<style>
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #1abc9c;
+  --accent-color: #3498db;
+  --light-gray: #f4f6f7;
+  --dark-gray: #2f3640;
+  --shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #fff;
+  color: var(--dark-gray);
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: var(--shadow);
+  padding: 1rem 0;
+  z-index: 1000;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li a {
+  text-decoration: none;
+  color: var(--dark-gray);
+  margin: 0 1rem;
+  font-weight: 500;
+}
+nav ul li a:hover {
+  color: var(--secondary-color);
+}
+#hero {
+  height: 60vh;
+  background: var(--primary-color);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+.hero-container img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border: 3px solid var(--secondary-color);
+}
+.hero-text h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.btn {
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.btn:hover {
+  background: var(--accent-color);
+}
+#about {
+  padding: 5rem 1.5rem;
+  text-align: center;
+  background: #fff;
+}
+#about h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+#about p {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+#skills {
+  background: var(--light-gray);
+  padding: 4rem 1rem;
+}
+#skills h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+.skills-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+}
+.skill-card {
+  flex: 0 0 260px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding: 1.5rem;
+  scroll-snap-align: center;
+}
+.skill-card .icon {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.skill-card p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #555;
+}
+#experience {
+  padding: 5rem 1.5rem;
+}
+#experience h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+.exp-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.exp-card h4 {
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+.exp-card .date {
+  font-size: 0.9rem;
+  color: gray;
+  margin-bottom: 0.5rem;
+}
+.exp-card ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+}
+#education {
+  background: var(--light-gray);
+  padding: 5rem 1.5rem;
+}
+#education h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+.edu-wrapper {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  gap: 1.5rem;
+}
+.edu-card {
+  background: white;
+  border-left: 6px solid var(--secondary-color);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.edu-card h4 {
+  margin: 0;
+  color: var(--primary-color);
+}
+#certifications {
+  background: var(--light-gray);
+  padding: 3rem 1.5rem 5rem;
+}
+#certifications h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+.cert-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.cert-card {
+  background: white;
+  border-left: 6px solid var(--secondary-color);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.cert-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+}
+.cert-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+#reference {
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+#reference h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+#reference p {
+  line-height: 1.8;
+}
+#contact {
+  padding: 3rem 1.5rem 5rem;
+  text-align: center;
+}
+#contact a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+#contact a:hover {
+  text-decoration: underline;
+}
+footer {
+  background: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+}
+footer a {
+  color: #fff;
+  margin: 0 0.5rem;
+  font-size: 1.4rem;
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <h3>Kaushal Jangid</h3>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<section id="hero">
+  <div class="hero-container">
+    <img src="profile.jpg" alt="Kaushal Jangid" />
+    <div class="hero-text">
+      <h1>Hi, I'm Kaushal Jangid</h1>
+      <p>Research Assistant at AIIMS Jodhpur<br />NIHR Global Health Research Centre for Multiple Long-Term Conditions</p>
+      <a href="#contact" class="btn">Connect With Me</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Field-focused, result-oriented research professional experienced in public health data collection, stakeholder engagement, community coordination, and documentation.
+    Adept at managing rural field operations, executing training programs, and ensuring high-quality research documentation under time-sensitive conditions.
+    Passionate about evidence-based public health and data-driven decisions.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-carousel">
+    <div class="skill-card">
+      <div class="icon"><i class="fas fa-database"></i></div>
+      <h3>Field Data Collection</h3>
+      <p>Experienced in mobile and tablet-based ODK data collection, ensuring dataset integrity and confidentiality during rural community studies.</p>
+    </div>
+    <div class="skill-card">
+      <div class="icon"><i class="fas fa-users"></i></div>
+      <h3>Community Engagement</h3>
+      <p>Active in conducting FGDs, CAB meetings, and health staff coordination, improving participation and data reliability.</p>
+    </div>
+    <div class="skill-card">
+      <div class="icon"><i class="fas fa-handshake"></i></div>
+      <h3>Stakeholder Coordination</h3>
+      <p>Collaborates with PHC staff, ANMs, and ASHAs to streamline communication and achieve project goals effectively.</p>
+    </div>
+    <div class="skill-card">
+      <div class="icon"><i class="fas fa-file-alt"></i></div>
+      <h3>Documentation & Reports</h3>
+      <p>Proficient in transcription, translation, and detailed report preparation using MS Word, Excel, and project portals.</p>
+    </div>
+    <div class="skill-card">
+      <div class="icon"><i class="fas fa-chart-line"></i></div>
+      <h3>Monitoring & Evaluation</h3>
+      <p>Assists in M&E documentation, implementation briefs, and outcome mapping for field-based pilot projects.</p>
+    </div>
+    <div class="skill-card">
+      <div class="icon"><i class="fas fa-laptop-code"></i></div>
+      <h3>Data Analysis</h3>
+      <p>Skilled in Excel, data visualization techniques, and basic statistical analysis for actionable insights.</p>
+    </div>
+    <div class="skill-card">
+      <div class="icon"><i class="fas fa-cogs"></i></div>
+      <h3>Project Management</h3>
+      <p>Experienced in coordinating multi-site projects, training delivery, resource allocation, and workflow optimization.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Work Experience</h2>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <h4>Research Assistant</h4>
+      <p><strong>AIIMS Jodhpur | NIHR Global Health Research Centre</strong></p>
+      <p class="date">September 2024 – Present</p>
+      <p>Supporting multidisciplinary health research on multiple long-term conditions. Works on surveys, ToT facilitation, data collection, translation, and case study documentation across rural sites.</p>
+      <ul>
+        <li>Facilitate Training of Trainers and Community Readiness Workshops.</li>
+        <li>Support monitoring, evaluation, and progress reporting.</li>
+        <li>Coordinate with field teams and stakeholders for data quality control.</li>
+      </ul>
+    </div>
+    <div class="exp-card">
+      <h4>Operations & Administrative Executive</h4>
+      <p><strong>Shree Ercon Prefabs, Jodhpur</strong></p>
+      <p class="date">August 2021 – September 2024</p>
+      <p>Supervised infrastructure-related projects, managing procurement, contracts, logistics, and site correspondence for government tenders including H&WCs and hospital prefab units.</p>
+      <ul>
+        <li>Handled procurement, billing, and administrative documentation.</li>
+        <li>Ensured project quality standards and timely execution.</li>
+        <li>Provided coordination between engineering and vendor teams.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="edu-wrapper">
+    <div class="edu-card">
+      <h4>PG Diploma in Computer Applications (PGDCA)</h4>
+      <p>Jaipur National University, 2023</p>
+    </div>
+    <div class="edu-card">
+      <h4>Bachelor of Arts (Sociology)</h4>
+      <p>Jai Narain Vyas University, 2021</p>
+    </div>
+    <div class="edu-card">
+      <h4>Senior Secondary (Class 12)</h4>
+      <p>RBSE, 2016</p>
+    </div>
+    <div class="edu-card">
+      <h4>Secondary (Class 10)</h4>
+      <p>RBSE, 2014</p>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <h2>Certifications</h2>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <h4>RS-CIT</h4>
+      <p>Rajasthan State Certificate in Information Technology (VMOU), July 2017</p>
+    </div>
+    <div class="cert-card">
+      <h4>Research Ethics Online Training (V2)</h4>
+      <p>The Global Health Network</p>
+    </div>
+    <div class="cert-card">
+      <h4>Accounting with Tally.ERP9 & Advanced Excel</h4>
+      <p>National Institute of Information Technology (NIIT)</p>
+    </div>
+  </div>
+</section>
+
+<section id="reference">
+  <h2>Reference</h2>
+  <p>Mr. Virendra Singh Tanwar<br/>Research Officer, AIIMS Jodhpur<br/>
+  Email: <a href="mailto:virendratanwar26@gmail.com">virendratanwar26@gmail.com</a></p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>597, Ashapurna City, Jodhpur</p>
+  <p><a href="tel:+919782460023">📞 +91-97824 60023</a></p>
+  <p><a href="mailto:jangidkaushal11@gmail.com">📧 jangidkaushal11@gmail.com</a></p>
+  <p>Languages: English | Hindi | Rajasthani (Marwadi)</p>
+</section>
+
+<footer>
+  <p>© 2025 Kaushal Jangid | Jodhpur, Rajasthan</p>
+  <div>
+    <a href="mailto:jangidkaushal11@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+</footer>
+</body>
+</html>
